@@ -30,7 +30,7 @@ print(f'Your name is {name}? Well, you must be from a different realm.')
 # allow any input at first, and validate responses with a function
 
 age = int(input(f'And what is your age, {name}? : '))
-
+print(40 * '-')
 if age < 15:
     print(f'Only {age} years old? This will be arduous, youngster!')
 elif age >= 15 and age < 50:
@@ -66,21 +66,22 @@ if start == 'y' or start == 'yes':
         print(40 * '-')
         river = input(
             'After traveling many miles north, you encounter the great'
-            ' Green River. \nWill you wait for a ferryman or attempt to cross?'
-            ' (wait/cross) : ').lower
+            ' Green River.\nWill you wait for a ferryman or attempt to cross?'
+            ' (wait/cross) : ').lower()
         print(40 * '-')
         if river == 'wait':
             health += 3
-            print(f'The ferryman arrives hours later, with rations. After'
-                  f' eating and crossing the river, \nyour health is now {health}.')
+            print(f'The ferryman arrives hours later, with rations.\nAfter'
+                  f' eating and crossing the river, your health increased to'
+                  f' {health}.')
         elif river == 'cross':
             health -= 3
             print(f'You swam across, but rough currents dashed you against the'
-                  f' rocks. Your health is now {health}.')
+                  f' rocks.\nYour health decreased to {health}.')
         else:
             print(
                 'I\'m calling this off. You lack basic communication skills.'
-                ' If you cannot wield a keyboard, you surely cannot wield a sword.')
+                '\nIf you cannot wield a keyboard, you surely cannot wield a sword.')
 
         # ACT II: The Village or the Market
         print(40 * '-')
@@ -97,25 +98,27 @@ if start == 'y' or start == 'yes':
             print(
                 f'After haggling with merchants, you are offered a mat to sleep on'
                 f' \nand a small sword which you can use to fight Jörmungandr. \nThe'
-                f' mat is uncomfortable and hurts your back. You health is now {health}.')
+                f' mat is uncomfortable and hurts your back.\nYour health decreased'
+                f' to {health}.')
         elif resting_place == 'village':
             health += 3
             print(
                 f'The villagers are poor but kind. You are offered a warm bed,'
                 f'\nand meet a skilled ironsmith.\nHe gives you a great sword to fight'
-                f' the wicked Jörmungandr. \nRested and armed, you health is now {health}.')
+                f' the wicked Jörmungandr. \nRested and armed, your health increased'
+                f' to {health}.')
         else:
             print(
                 'I\'m calling this off. You lack basic communication skills.'
-                ' If you cannot wield a keyboard, you surely cannot wield a sword.')
+                '\nIf you cannot wield a keyboard, you surely cannot wield a sword.')
 
         # ACT III: Deus Ex Machina
         print(40 * '-')
         print('ACT III: Deus Ex Machina')
         print(40 * '-')
         visitor = input(
-            'It is morning, and time to face the beast. After returning to the road'
-            ' north,\nyou set out to slay Jörmungandr. The sky turns grey and the wind'
+            'It is morning, and time to face the beast.\nAfter returning to the road'
+            ' north, you set out to slay Jörmungandr.\nThe sky turns grey and the wind'
             ' bites as you travel further north.\nAs the noon sun barely penetrates'
             ' the clouds, you find yourself before a mystic visitor.\nWill you'
             ' speak with this creature or runaway? (speak/runaway) : ').lower()
@@ -139,30 +142,62 @@ if start == 'y' or start == 'yes':
                 f' boots.\nI beckon you, mystic stranger, reveal yourself and your'
                 f' motives!"')
             print(40 * '-')
-            experience = input(
+            accept = input(
                 f'The stranger approaches, revealing it\'s form.\nStanding tall and'
                 f' powerful, you recognize the smug confidence of a god before you.'
                 f'\n"Quite an introduction, {name}. Your bravery is noted, though'
-                f' very misguided,\nas the serpeant will not be fell so easily.'
+                f' very misguided,\nas the serpeant will not be felled so easily.'
                 f'\nJörmungandr, born of Angrboda herself, will bring about Ragnarok'
                 f'\nwhen it releases it\'s cruel tail, surely as the day becomes'
                 f' night.\nI know this for I am Hermod, son of Odin and messenger'
-                f' of Valhalla.\nI have seen Hel. It lacks many comforts, to be sure.'
-                f'\nWill you accept the help of the gods of Valhalla?" (y/n) : ').lower()
+                f' of Valhalla.\nI have been to Hel. It lacks many comforts,'
+                f' to be sure.\nWill you accept the help of the gods of Valhalla?"'
+                f' (y/n) : ').lower()
             print(40 * '-')
-            if experience == 'y':
+            if accept == 'y':
                 charm = True
-                health += 3
+                health += 5
                 print(f'"Wise decision, {name}. Take this charm, forged'
                       f' by the gifted Brokkr.\nIt will protect you from the'
                       f' poison of the wicked serpeant,\nthough you may yet'
                       f' perish by it\'s bite alone.\nAlso, drink this mead'
                       f' to replenish your strength and catch a buzz.\nGo with'
-                      f' the gods, {name}. Oh, and bring me a bolt of the'
+                      f' the gods, {name}! Oh, and bring me a bolt of the'
                       f' snake\'s skin. Brokkr owes me a belt."')
                 print(40 * '-')
                 print(
-                    f'You put on the charm, and your health is now {health}.')
+                    f'You put on the charm, and it glistens with an inner light.'
+                    f'\nYou once felt that inner light too, but now only dread'
+                    f' remains.\nYour health increased to {health}.')
+            elif accept == 'n':
+                charm = False
+                health += 2
+                print(f'"You refuse the help of Valhalla? I ought to end your'
+                      f' journey now, foolish mortal.\nHowever it will be more'
+                      f' enjoyable to watch you perish at the fang of Jörmungandr!'
+                      f'\nUndeserving as you may be, {name}, I will share with'
+                      f' you one gift out of pity.\nHave this apple. It is mealy,'
+                      f' and I have reservations in the Mead Hall soon. anyway."')
+                print(40 * '-')
+                print(f'You nibble at the mealy apple and feel a curious mixture'
+                      f' of sorrow,\nglucose and impending doom fill your veins.'
+                      f'\nYour health has increased to {health}')
+            else:
+                print(
+                    'I\'m calling this off. You lack basic communication skills.'
+                    '\nIf you cannot wield a keyboard, you surely cannot wield a sword.')
+
+            # ACT IV: Jörmungandr
+            print(40 * '-')
+            print('ACT IV: Jörmungandr')
+            print(40 * '-')
+            print('Having survived the encounter with the stranger, you resume'
+                  ' your journey north.\nOn the horizon looms the black clouds'
+                  ' of the serpeant\'s poisonous breath.\nAt least one assumes'
+                  ' it to be breath and not some other gaseous snake exhaust.'
+                  '\nYou will soon encouter the wicked Jörmungandr.')
+            print(40 * '-')
+
         else:
             print(
                 'I\'m calling this off. You lack basic communication skills.'
@@ -170,6 +205,6 @@ if start == 'y' or start == 'yes':
     else:
         print(
             'I\'m calling this off. You lack basic communication skills.'
-            ' If you cannot wield a keyboard, you surely cannot wield a sword.')
+            '\nIf you cannot wield a keyboard, you surely cannot wield a sword.')
 else:
     print(f'I did not think you were ready either. Farewell, {name}.')
