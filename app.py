@@ -59,7 +59,7 @@ if start == 'y' or start == 'yes':
     print(40 * '-')
     if north_east == 'east':
         print(
-            'You travel east until the road meets the marsh. \nWolves descend'
+            'You travel east until the road meets the woods. \nWolves descend'
             ' upon you, and you perish. Permadeath, harsh right?')
     elif north_east == 'north':
         print('Excellent, yes let\'s head straight towards the danger.')
@@ -95,6 +95,7 @@ if start == 'y' or start == 'yes':
         print(40 * '-')
         if resting_place == 'market':
             health -= 3
+            sword = 'small'
             print(
                 f'After haggling with merchants, you are offered a mat to sleep on'
                 f' \nand a small sword which you can use to fight Jörmungandr. \nThe'
@@ -102,6 +103,7 @@ if start == 'y' or start == 'yes':
                 f' to {health}.')
         elif resting_place == 'village':
             health += 3
+            sword = 'great'
             print(
                 f'The villagers are poor but kind. You are offered a warm bed,'
                 f'\nand meet a skilled ironsmith.\nHe gives you a great sword to fight'
@@ -124,13 +126,14 @@ if start == 'y' or start == 'yes':
             ' speak with this creature or runaway? (speak/runaway) : ').lower()
         print(40 * '-')
         if visitor == 'runaway':
+            charm = False
             health -= 2
             print(f'You scamper past the stranger, squealing and sweating, hoping'
                   f' that they do not give chase.\nYou hear the stranger call'
                   f' out to you, but you dare not look back.\nAfter several minutes of'
                   f' sprinting, you feel safe to stop and get your bearings.\nThe'
                   f' stranger did not follow you, but the affair left you tired.'
-                  f'\nYour health suffers from the exhaustion, and is now {health}')
+                  f'\nYour health suffers from the exhaustion, and is now {health}.')
         elif visitor == 'speak':
             print(
                 f'You call out to the vision, "I am {name}, \nvassal of Dewey the noble'
@@ -187,21 +190,110 @@ if start == 'y' or start == 'yes':
                     'I\'m calling this off. You lack basic communication skills.'
                     '\nIf you cannot wield a keyboard, you surely cannot wield a sword.')
 
-            # ACT IV: Jörmungandr
+        # ACT IV: Jörmungandr
+        print(40 * '-')
+        print('ACT IV: Jörmungandr')
+        print(40 * '-')
+        print('Having survived the encounter with the stranger, you resume'
+              ' your journey north.\nOn the horizon looms the black clouds'
+              ' of the serpeant\'s poisonous breath.\nAt least one assumes'
+              ' it to be breath and not some other gaseous snake exhaust.'
+              '\nYou will soon encouter the wicked Jörmungandr.')
+        print(40 * '-')
+        fight = input('You arrive at the half-frozen marsh the serpeant'
+                      ' inhabits.\nThe snake is distracted, playing with it\'s'
+                      ' latest kill, a mammoth.\nIt constricts and releases in'
+                      ' rhythm, while the tortured creature gasps it\'s final'
+                      ' breaths.\nWith this not-so-subtle look at your own'
+                      ' potential fate, you must now choose.\nCall out to'
+                      ' Jömungandr and fight, or runaway in shame?'
+                      ' (fight/runaway) : ').lower()
+        print(40 * '-')
+        if fight == 'fight':
+            print(f'You steel yourself, remembering the training you did'
+                  f' not receive, and raise your voice.\n"Jömungandr! It'
+                  f' is I, {name}, vassal of Dewey the noble comptroller\n'
+                  f'to the wise Firthquaddle of Falldale, governor of this'
+                  f' land.\nUnder royal decree of the mighty Trevius, King'
+                  f' of Midgard,\nI am on a quest to slay thee, wicked'
+                  f' serpeant!\nMy liege seeks eternal life, the forstallment'
+                  f' of human suffering,\nand luxurious new garments hewn'
+                  f' from your very scales.\nReptile is last season, but'
+                  f' I am not his majesty\'s couturier.\nAnyway, prepare to'
+                  f' perish, Jömungandr!"')
             print(40 * '-')
-            print('ACT IV: Jörmungandr')
+            print('The serpeant fixes it\'s dead eyes on you, sending a'
+                  ' chill to your core.\nWith a swiftness and silence that'
+                  ' seems neigh impossible for it\'s size,\nJömungandr'
+                  ' lounges at you. You raise you sword and fight!')
             print(40 * '-')
-            print('Having survived the encounter with the stranger, you resume'
-                  ' your journey north.\nOn the horizon looms the black clouds'
-                  ' of the serpeant\'s poisonous breath.\nAt least one assumes'
-                  ' it to be breath and not some other gaseous snake exhaust.'
-                  '\nYou will soon encouter the wicked Jörmungandr.')
-            print(40 * '-')
-
+            if charm == True:
+                health -= 10
+                print('You parry the first blow of the snake, surprising'
+                      ' even yourself.\nThe second strike comes before you'
+                      ' can raise you sword again,\n and you feel the painful'
+                      ' bite of it\'s powerful jaw.\nThe charm of Brokkr'
+                      ' glows bright and protects you from the venom.\nYou'
+                      ' lose 10 health.')
+                print(40 * '-')
+                print(f'Your health is now {health}.')
+                print(40 * '-')
+                if health <= 0:
+                    print('Having lost all you health, you perish.')
+                    print(40 * '-')
+                elif health >= 0 and sword == 'small':
+                    print(f'The serpeant moves fast, knowing it has only'
+                          f' wounded you.\nThis next strike from the snake'
+                          f' is rushed and off target, and you counter.'
+                          f'\nYou swing you {sword} sword, dealing 25'
+                          f' damage, and the beast recoils.')
+                elif health >= 0 and sword == 'great':
+                    print(f'The serpeant moves fast, knowing it has only'
+                          f' wounded you.\nThis next strike from the snake'
+                          f' is rushed and off target, and you counter.'
+                          f'\nYou swing you {sword} sword, dealing 50'
+                          f' damage, and the beast recoils.')
+            else:
+                health -= 20
+                print(f'You parry the first blow of the snake, surprising'
+                      ' even yourself.\nThe second strike comes before you'
+                      ' can raise you sword again,\n and you feel the painful'
+                      ' bite of it\'s powerful jaw.\nThe venom burns your'
+                      ' veins, and you lose 20 health.')
+                print(40 * '-')
+                print(f'Your health is now {health}.')
+                print(40 * '-')
+                if health <= 0:
+                    print('Having lost all you health, you perish.')
+                    print(40 * '-')
+                elif health >= 0 and sword == 'small':
+                    print(f'The serpeant moves fast, knowing it has only'
+                          f' wounded you.\nThis next strike from the snake'
+                          f' is rushed and off target, and you counter.'
+                          f'\nYou swing you {sword} sword, dealing 25'
+                          f' damage, and the beast recoils.')
+                elif health >= 0 and sword == 'great':
+                    print(f'The serpeant moves fast, knowing it has only'
+                          f' wounded you.\nThis next strike from the snake'
+                          f' is rushed and off target, and you counter.'
+                          f'\nYou swing you {sword} sword, dealing 50'
+                          f' damage, and the beast recoils.')
+        elif fight == 'runaway':
+            print('You decide that you will not suffer the fate of that'
+                  ' furry beast.\nGathering yourself, you run with all the'
+                  ' speed you can muster.\nUnbeknownst to you, Jömungandr'
+                  ' was well aware of you presence and slithers behind you.'
+                  '\nIn one swift strike, the serpeant snatches you from the'
+                  ' earth in it\'s putrid jaw.\nYou life fades, and you'
+                  ' perish a failure.')
         else:
             print(
                 'I\'m calling this off. You lack basic communication skills.'
                 ' If you cannot wield a keyboard, you surely cannot wield a sword.')
+        # else:
+        #     print(
+        #         'I\'m calling this off. You lack basic communication skills.'
+        #         ' If you cannot wield a keyboard, you surely cannot wield a sword.')
     else:
         print(
             'I\'m calling this off. You lack basic communication skills.'
