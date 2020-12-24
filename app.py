@@ -247,46 +247,66 @@ if start == 'y' or start == 'yes':
                           f' is rushed and off target, and you counter.'
                           f'\nYou swing you {sword} sword, dealing 25'
                           f' damage, and the beast recoils.')
-                elif health >= 0 and sword == 'great':
-                    print(f'The serpeant moves fast, knowing it has only'
-                          f' wounded you.\nThis next strike from the snake'
-                          f' is rushed and off target, and you counter.'
-                          f'\nYou swing you {sword} sword, dealing 50'
-                          f' damage, and the beast recoils.')
-                print(40 * '-')
-                print('Feeling weak and dazed, you decide to go for the kill'
-                      ' lest you be struck again.\nDashing toward Jömungandr,'
-                      ' you leap towards the snake\'s throat.\nThe swift serpeant'
-                      ' is prepared and grabs your torso in its putrid mouth.'
-                      ' You are trapped, and the bite deals 10 damage.')
-                health -= 10
-                print(40 * '-')
-                print(f'Your health is now {health}.')
-                print(40 * '-')
-                if health <= 0:
-                    print('Having lost all your health, you perish.')
                     print(40 * '-')
-                elif health >= 0 and sword == 'small':
+                    print('Feeling weak and dazed, you decide to go for the kill'
+                          ' lest you be struck again.\nDashing toward Jömungandr,'
+                          ' you leap towards the snake\'s throat.\nThe swift serpeant'
+                          ' is prepared and grabs your torso in its putrid mouth.'
+                          '\nYou are trapped, and the bite deals 10 damage.')
                     health -= 10
-                    print(f'Knowing this is you last chance and you are near'
-                          f' the snake\'s throat,\nyou plunge your {sword}'
-                          f' sword to the hilt, dealing 25 more damage.\nThis'
-                          f' however is not enough to stop Jömungandr.\nThe'
-                          f' beast crushes down harder, dealing 10 more damage'
-                          f' to you.')
                     print(40 * '-')
                     print(f'Your health is now {health}.\nHaving lost all'
                           f' your health, you perish.')
                     print(40 * '-')
+                    print(''' _
+| |
+| | ___  ___  ___ _ __
+| |/ _ \/ __|/ _ \ '__|
+| | (_) \__ \  __/ |
+|_|\___/|___/\___|_|
+                       ''')
                 elif health >= 0 and sword == 'great':
-                    print(f'Knowing this is you last chance and you are near'
-                          f' the snake\'s throat,\nyou plunge your {sword}'
-                          f' sword to the hilt, dealing 50 more damage.\nThe'
-                          f' wicked Jömungandr loosens its grip as its life'
-                          f' fades.\nThe beast falls defeated, and you wriggle'
-                          f' free of its jaw, victorious!')
+                    print(f'The serpeant moves fast, knowing it has only'
+                          f' wounded you.\nThis next strike from the snake'
+                          f' is rushed and off target, and you counter.'
+                          f'\nYou swing your {sword} sword, dealing 50'
+                          f' damage, and the beast recoils.')
                     print(40 * '-')
-                    # insert ascii art
+                    print('Feeling weak and dazed, you decide to go for the kill'
+                          ' lest you be struck again.\nDashing toward Jömungandr,'
+                          ' you leap towards the snake\'s throat.\nThe swift serpeant'
+                          ' is prepared and grabs your torso in its putrid mouth.'
+                          '\nYou are trapped, and the bite deals 10 damage.')
+                    health -= 10
+                    print(40 * '-')
+                    print(f'Your health is now {health}.')
+                    print(40 * '-')
+                    if health <= 0:
+                        print('Having lost all your health, you perish.')
+                        print(40 * '-')
+                    elif health >= 0 and sword == 'small':
+                        health -= 10
+                        print(f'Knowing this is you last chance and you are near'
+                              f' the snake\'s throat,\nyou plunge your {sword}'
+                              f' sword to the hilt, dealing 25 more damage.\nThis'
+                              f' however is not enough to stop Jömungandr.\nThe'
+                              f' beast crushes down harder, dealing 10 more damage'
+                              f' to you.')
+                        print(40 * '-')
+                        print(f'Your health is now {health}.\nHaving lost all'
+                              f' your health, you perish.')
+                        print(40 * '-')
+                    else:
+                        print(f'Knowing this is you last chance and you are near'
+                              f' the snake\'s throat,\nyou plunge your {sword}'
+                              f' sword to the hilt, dealing 50 more damage.\nThe'
+                              f' wicked Jömungandr loosens its grip as its life'
+                              f' fades.\nThe beast falls defeated, and you wriggle'
+                              f' free of its jaw, victorious!')
+                        print(40 * '-')
+
+                        # Victory insert ascii art
+
             else:
                 health -= 20
                 print(f'You parry the first blow of the snake, surprising'
@@ -295,24 +315,17 @@ if start == 'y' or start == 'yes':
                       ' bite of it\'s powerful jaw.\nThe venom burns your'
                       ' veins, and you lose 20 health.')
                 print(40 * '-')
-                print(f'Your health is now {health}.')
+                print(f'Your health is now {health}.\nHaving lost all'
+                      f' your health, you perish.')
                 print(40 * '-')
-                if health <= 0:
-                    print('Having lost all you health, you perish.')
-                    print(40 * '-')
-                elif health >= 0 and sword == 'small':
-                    print(f'The serpeant moves fast, knowing it has only'
-                          f' wounded you.\nThis next strike from the snake'
-                          f' is rushed and off target, and you counter.'
-                          f'\nYou swing your {sword} sword, dealing 25'
-                          f' damage, and the beast recoils.')
-                elif health >= 0 and sword == 'great':
-                    print(f'The serpeant moves fast, knowing it has only'
-                          f' wounded you.\nThis next strike from the snake'
-                          f' is rushed and off target, and you counter.'
-                          f'\nYou swing your {sword} sword, dealing 50'
-                          f' damage, and the beast recoils.')
-                # HERE
+                print(''' _
+| |
+| | ___  ___  ___ _ __
+| | / _ \/ __ | / _ \ '__|
+| | (_) \__ \  __ / |
+|_ |\___/|___ /\___ | _|
+                       ''')
+
         elif fight == 'runaway':
             print('You decide that you will not suffer the fate of that'
                   ' furry beast.\nGathering yourself, you run with all the'
@@ -325,10 +338,6 @@ if start == 'y' or start == 'yes':
             print(
                 'I\'m calling this off. You lack basic communication skills.'
                 ' If you cannot wield a keyboard, you surely cannot wield a sword.')
-        # else:
-        #     print(
-        #         'I\'m calling this off. You lack basic communication skills.'
-        #         ' If you cannot wield a keyboard, you surely cannot wield a sword.')
     else:
         print(
             'I\'m calling this off. You lack basic communication skills.'
