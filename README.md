@@ -19,7 +19,7 @@ python3 app.py
 ```
 
 ## 🔮 Future Development
-This is just a whole bunch of branching conditional statements, so it is pretty fragile. Maybe someday when I am feeling bored, it should be broken out into functions where possible. The player's character should be a dictionar. Being able to store the attributes and items like this would make more sense. Also, it is obviously not very dry. Some interactions are repeated and should be in variables.  
+This is just a whole bunch of branching conditional statements, so it is pretty fragile. Maybe someday when I am feeling bored, it should be broken out into functions where possible. The player's character should be a dictionary. Being able to store the attributes and items like this would make more sense. Also, it is obviously not very dry. Some interactions are repeated and should be in variables.  
 
 ## 📜 License
 **MIT** • *(If you fork and recreate this, please be kind and rebrand your version!)*  
