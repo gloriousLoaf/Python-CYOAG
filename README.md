@@ -6,6 +6,8 @@ This is a simple text-based game. The user gets introduced to the fantasy world 
 
 Alright, I am no writer. Especially not of fantasy, so forgive the simplicity of the story line and all the tropes ripped directly from Norse mythology. However, I did try to make this fun with as much snark as I could add. Plus some fun [ASCII Art](http://www.network-science.de/ascii/) to celebrate a victory or add shame to a loss.  
 
+Writing this game was really an exercise for me to get comfortable with the **syntactic spacing** of Python. Coming from JavaScript, it is a new concept and was worth putting in a bit of thinking to get used to as I learn this language!
+
 ## 💾 Installation & Usage
 Just clone this repo to your local machine and check out the only file, ```app.py```. From a terminal window, navigate to the root directory and run with... 
 
@@ -17,6 +19,7 @@ python app.py
 ```
 python3 app.py
 ```
+Once the game is running, read along and answer the prompts to choose your adventure!
 
 ## 🔮 Future Development
 This is just a whole bunch of branching conditional statements, so it is pretty fragile. Maybe someday when I am feeling bored, it should be broken out into functions where possible. The player's character should be a dictionary. Being able to store the attributes and items like this would make more sense. Also, it is obviously not very dry. Some interactions are repeated and should be in variables.  
