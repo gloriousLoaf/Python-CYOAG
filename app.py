@@ -4,6 +4,12 @@
 # https://www.youtube.com/watch?v=7R-CfL21zIY
 
 
+# This is a very simple game. In fact it's just a bunch chain of branching
+# statements! Maybe someday when I'm bored I will refactor this into
+# something less fragile and more fun. For now, it was literally just an
+# exercise for me to wrap my head around the syntactic spacing of Python.
+
+
 # INTRO: Welcome to Midgard. Riffing on some old Norse stuff that I actually
 # don't know much about. Just pulling some context from Wikipedia. Though I
 # suddenly understand Midgar and the snake in FF7...
@@ -258,6 +264,10 @@ if start == 'y' or start == 'yes':
                     print(f'Your health is now {health}.\nHaving lost all'
                           f' your health, you perish.')
                     print(40 * '-')
+                    # ascii art! the spacing on this and the ones that follow
+                    # works well in my vscode terminal and in bash on windows.
+                    # I use 2 space tabbing and default CRLF, so it you clone
+                    # from GitHub, you may need to adjust it a bit!
                     print(''' _
 | |
 | | ___  ___  ___ _ __
@@ -304,8 +314,16 @@ if start == 'y' or start == 'yes':
                               f' fades.\nThe beast falls defeated, and you wriggle'
                               f' free of its jaw, victorious!')
                         print(40 * '-')
-
-                        # Victory insert ascii art
+                        print(f'Congratulations, {name}! You have won this short,'
+                              f' snarky journey.')
+                        print(40 * '-')
+                        print('''          _                       
+         (_)                      
+__      ___ _ __  _ __   ___ _ __ 
+\ \ /\ / / | '_ \| '_ \ / _ \ '__|
+ \ V  V /| | | | | | | |  __/ |   
+  \_/\_/ |_|_| |_|_| |_|\___|_| 
+  ''')
 
             else:
                 health -= 20
@@ -325,7 +343,6 @@ if start == 'y' or start == 'yes':
 | | (_) \__ \  __ / |
 |_ |\___/|___ /\___ | _|
                        ''')
-
         elif fight == 'runaway':
             print('You decide that you will not suffer the fate of that'
                   ' furry beast.\nGathering yourself, you run with all the'
